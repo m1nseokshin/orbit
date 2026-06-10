@@ -1,0 +1,582 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #050505;
+    color: #ffffff;
+    font-family: 'Pretendard', 'Manrope', 'Inter', -apple-system, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  img {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+    pointer-events: none;
+  }
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Keyframes for paired scanning wave */
+@keyframes scan {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+.animate-scan {
+  animation: scan 3s infinite cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Glassmorphism panel styling */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-heavy {
+  background: rgba(20, 20, 20, 0.85);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Customized scroll style for chat message log */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 99px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Slide up animation for onboarding to dashboard transition */
+@keyframes slideUp {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animate-slideUp {
+  transform: translateY(100%);
+  animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.animate-fadeOut {
+  opacity: 1;
+  animation: fadeOut 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slideUpSlower {
+  transform: translateY(100%);
+  animation: slideUp 3.15s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Staggered box entrance transition */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  opacity: 0;
+  animation: fadeInUp 1.05s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.delay-75 { animation-delay: 112ms; }
+.delay-150 { animation-delay: 225ms; }
+.delay-225 { animation-delay: 338ms; }
+.delay-300 { animation-delay: 450ms; }
+.delay-375 { animation-delay: 562ms; }
+.delay-450 { animation-delay: 675ms; }
+
+/* Swipe transitions for splash to onboarding */
+@keyframes slideLeftOut {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-slideLeftOut {
+  animation: slideLeftOut 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideLeftIn {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-slideLeftIn {
+  animation: slideLeftIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+
+
+
+
+
+/* Figma-Locked Scale Wrapper */
+.figma-scaled-container {
+  width: 402px;
+  height: 874px;
+  position: relative;
+  background-color: #000000;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* Onboarding Graphic Animations */
+
+/* Onboarding Step 1 (slide in from left with staggered timings) */
+@keyframes slideFromLeftCircle1 {
+  from {
+    transform: translateX(-400px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideFromLeftCircle2 {
+  from {
+    transform: translateX(-300px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideFromLeftCircle3 {
+  from {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideFromLeftArrow {
+  from {
+    transform: translateX(-350px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Onboarding Step 2 (slide up shape) */
+@keyframes slideUpGraphic {
+  from {
+    transform: translateY(300px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Onboarding Step 3 (slide down shape and background spotlight glow) */
+@keyframes slideDownGraphic {
+  from {
+    transform: translateY(-300px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInGlow {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes floatSaturn {
+  0% {
+    transform: translateY(0px) rotate(-15deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(-14deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(-15deg);
+  }
+}
+
+@keyframes floataccretion {
+  0% {
+    transform: rotate(-15deg) scale(1);
+    opacity: 0.1;
+  }
+  50% {
+    transform: rotate(-15deg) scale(1.03);
+    opacity: 0.2;
+  }
+  100% {
+    transform: rotate(-15deg) scale(1);
+    opacity: 0.1;
+  }
+}
+
+@keyframes simpleFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes simpleFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Onboarding slow animation classes with 'both' fill-mode to hide elements during delays */
+.animate-onboarding-left1 {
+  opacity: 0;
+  transform: translateX(-400px);
+  animation: slideFromLeftCircle1 4.05s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.animate-onboarding-left2 {
+  opacity: 0;
+  transform: translateX(-300px);
+  animation: slideFromLeftCircle2 3.38s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.animate-onboarding-left3 {
+  opacity: 0;
+  transform: translateX(-200px);
+  animation: slideFromLeftCircle3 3.72s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.animate-onboarding-leftArrow {
+  opacity: 0;
+  transform: translateX(-350px);
+  animation: slideFromLeftArrow 4.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.animate-onboarding-left5 {
+  opacity: 0;
+  transform: translateX(-400px);
+  animation: slideFromLeftCircle1 4.73s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.animate-onboarding-left6 {
+  opacity: 0;
+  transform: translateX(-300px);
+  animation: slideFromLeftCircle2 2.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+/* Slide 2 (Step 1) animation - Farther start and 1.5x slower */
+.animate-onboarding-up {
+  opacity: 0;
+  transform: translateY(1350px);
+  animation: slideUpGraphicFar 6.08s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Slide 3 (Step 2) staggered far-down animations for parallax graphic space */
+.animate-onboarding-down-1 {
+  opacity: 0;
+  transform: translateY(-1550px);
+  animation: slideDownGraphicFar1 6.08s cubic-bezier(0.16, 1, 0.3, 1) 0s both;
+}
+.animate-onboarding-down-2 {
+  opacity: 0;
+  transform: translateY(-1400px);
+  animation: slideDownGraphicFar2 5.4s cubic-bezier(0.16, 1, 0.3, 1) 0.53s both;
+}
+.animate-onboarding-down-3 {
+  opacity: 0;
+  transform: translateY(-1650px);
+  animation: slideDownGraphicFar3 5.7s cubic-bezier(0.16, 1, 0.3, 1) 1.05s both;
+}
+.animate-onboarding-down-bg {
+  opacity: 0;
+  transform: translateY(-1750px);
+  animation: slideDownGraphicFar3 6.75s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+}
+.animate-onboarding-saturn {
+  opacity: 0;
+  animation: simpleFadeIn 8.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.animate-onboarding-welcome-buttons {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: simpleFadeInUp 4.05s cubic-bezier(0.16, 1, 0.3, 1) 2.25s both;
+}
+
+/* Base fade-in for slides */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-fadeIn {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Floating animation for flat outline Saturn graphic */
+@keyframes floatSimple {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+.animate-float-saturn {
+  animation: floatSimple 5s ease-in-out infinite;
+}
+
+/* Individual Saturn components staggered entry animations */
+@keyframes saturnOuterIn {
+  from {
+    transform: translateX(-150px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes saturnMainIn {
+  from {
+    transform: translateY(150px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes saturnInnerIn {
+  from {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-saturn-outer {
+  opacity: 0;
+  transform: translateX(-150px);
+  transform-origin: 170px 120px;
+  animation: saturnOuterIn 3.75s cubic-bezier(0.16, 1, 0.3, 1) 0.9s both;
+}
+
+.animate-saturn-main {
+  opacity: 0;
+  transform: translateY(150px);
+  transform-origin: 170px 120px;
+  animation: saturnMainIn 4.2s cubic-bezier(0.16, 1, 0.3, 1) 0s both;
+}
+
+.animate-saturn-inner {
+  opacity: 0;
+  transform: translateY(-100px);
+  transform-origin: 170px 120px;
+  animation: saturnInnerIn 3.3s cubic-bezier(0.16, 1, 0.3, 1) 1.8s both;
+}
+
+/* Slide 2 & 3 Keyframe Animations from farther distance */
+@keyframes slideUpGraphicFar {
+  from {
+    transform: translateY(1350px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDownGraphicFar1 {
+  from {
+    transform: translateY(-1550px) scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDownGraphicFar2 {
+  from {
+    transform: translateY(-1400px) scale(0.85);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDownGraphicFar3 {
+  from {
+    transform: translateY(-1650px) scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes disperseCosmos {
+  0% {
+    transform: scale(2.8) rotate(25deg);
+    opacity: 0.95;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.18;
+  }
+}
+
+.animate-onboarding-stars-field {
+  transform-origin: center center;
+  animation: disperseCosmos 6.08s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* iOS-style Push Notification Animations */
+@keyframes notificationSlideDown {
+  0% {
+    transform: translateY(-120%) scale(0.95);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes notificationSlideUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120%) scale(0.95);
+    opacity: 0;
+  }
+}
+
+.animate-notification-in {
+  animation: notificationSlideDown 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-notification-out {
+  animation: notificationSlideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Force viewport lock and block rubber banding on mobile */
+:root {
+  --theme-bg: #000000;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--theme-bg);
+}
+
+@media (max-width: 767px) {
+  html, body {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+}
+
