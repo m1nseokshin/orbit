@@ -153,7 +153,7 @@ export default function DeviceDetail({
               className={`absolute top-0 left-0 w-full h-[200%] object-cover object-top transition-transform hover:scale-105 duration-350 ${
                 isDysonOn ? '' : 'opacity-40 grayscale'
               }`} 
-              src="/dyson.png" 
+              src={`${import.meta.env.BASE_URL}dyson.png`} 
             />
           )}
           {deviceType === 'nest' && (
@@ -162,7 +162,7 @@ export default function DeviceDetail({
               className={`absolute top-0 left-0 w-full h-[200%] object-cover object-top transition-transform hover:scale-105 duration-350 ${
                 isNestOn ? '' : 'opacity-40 grayscale'
               }`} 
-              src="/nest.png" 
+              src={`${import.meta.env.BASE_URL}nest.png`} 
             />
           )}
           {deviceType === 'humidity' && (
@@ -171,7 +171,7 @@ export default function DeviceDetail({
               className={`absolute top-0 left-0 w-full h-[200%] object-cover object-top transition-transform hover:scale-105 duration-350 ${
                 isHumidifierOn ? '' : 'opacity-40 grayscale'
               }`} 
-              src="/humidifier.png" 
+              src={`${import.meta.env.BASE_URL}humidifier.png`} 
             />
           )}
           {deviceType === 'light' && (
@@ -180,7 +180,7 @@ export default function DeviceDetail({
               className={`absolute top-0 left-0 w-full h-[200%] object-cover object-top transition-transform hover:scale-105 duration-350 ${
                 isLightOn ? '' : 'opacity-40 grayscale'
               }`} 
-              src="/lamp.png" 
+              src={`${import.meta.env.BASE_URL}lamp.png`} 
             />
           )}
           {deviceType === 'medication' && (

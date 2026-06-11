@@ -568,7 +568,7 @@ export default function App() {
               <div className="flex items-center justify-between mb-0.5">
                 <div className="flex items-center gap-1.5">
                   <div className="w-5 h-5 rounded-md overflow-hidden bg-black flex items-center justify-center shadow-sm shrink-0 border border-white/10">
-                    <img src="/orbi-logo.png" alt="Orbi Logo" className="w-full h-full object-cover pointer-events-none" />
+                    <img src={`${import.meta.env.BASE_URL}orbi-logo.png`} alt="Orbi Logo" className="w-full h-full object-cover pointer-events-none" />
                   </div>
                   <span className="text-[11px] font-extrabold tracking-tight">Orbi</span>
                 </div>
