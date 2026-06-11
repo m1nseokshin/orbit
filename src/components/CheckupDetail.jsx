@@ -67,8 +67,8 @@ export default function CheckupDetail({ onBack, isDarkMode }) {
           isDarkMode ? 'bg-[#111111] border-white/5' : 'bg-white border-neutral-200 shadow-md'
         }`}>
           {bookingStatus === 'cancelled' && (
-            <div className="absolute inset-0 bg-red-600/10 backdrop-blur-[2px] z-10 flex items-center justify-center">
-              <div className="bg-red-600 text-white font-bold px-6 py-3 rounded-full shadow-lg text-[15px] animate-fadeIn">
+            <div className="absolute inset-0 bg-neutral-950/40 backdrop-blur-[2px] z-10 flex items-center justify-center">
+              <div className="bg-neutral-800 text-white font-bold px-6 py-3 rounded-full shadow-lg text-[15px] animate-fadeIn">
                 예약이 취소되었습니다
               </div>
             </div>
@@ -86,8 +86,8 @@ export default function CheckupDetail({ onBack, isDarkMode }) {
             </div>
             <span className={`px-3 py-1 rounded-full text-[11px] font-bold ${
               bookingStatus === 'confirmed' 
-                ? 'bg-emerald-500/10 text-emerald-500 border border-emerald-500/20' 
-                : 'bg-red-500/10 text-red-500 border border-red-500/20'
+                ? (isDarkMode ? 'bg-white/10 text-white border border-white/20' : 'bg-neutral-900 text-white border border-neutral-900') 
+                : (isDarkMode ? 'bg-[#111] text-neutral-500 border border-white/5 line-through' : 'bg-neutral-100 text-neutral-400 border border-neutral-200 line-through')
             }`}>
               {bookingStatus === 'confirmed' ? '예약 확정' : '취소 완료'}
             </span>
@@ -118,8 +118,8 @@ export default function CheckupDetail({ onBack, isDarkMode }) {
               <span className={`text-[13px] ${isDarkMode ? 'text-white/70' : 'text-neutral-600'}`}>사전 온라인 문진표</span>
               <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold ${
                 isQuestionnaireDone 
-                  ? 'bg-emerald-500/10 text-emerald-500 border border-emerald-500/20' 
-                  : 'bg-amber-500/10 text-amber-500 border border-amber-500/20'
+                  ? (isDarkMode ? 'bg-white/10 text-white border border-white/20' : 'bg-neutral-900 text-white border border-neutral-900') 
+                  : (isDarkMode ? 'bg-[#111] text-neutral-400 border border-white/5' : 'bg-neutral-100 text-neutral-500 border border-neutral-300')
               }`}>
                 {isQuestionnaireDone ? '작성 완료' : '작성 전'}
               </span>
@@ -159,8 +159,8 @@ export default function CheckupDetail({ onBack, isDarkMode }) {
               onClick={() => setShowCancelConfirmModal(true)}
               className={`h-[48px] rounded-[16px] font-bold text-[14px] flex items-center justify-center gap-2 transition-all active:scale-[0.98] border ${
                 isDarkMode 
-                  ? 'bg-red-500/10 border-red-500/20 hover:bg-red-500/20 text-red-500' 
-                  : 'bg-red-50 border-red-200 hover:bg-red-100/50 text-red-600 shadow-sm'
+                  ? 'bg-transparent border-white/10 hover:bg-white/5 text-neutral-400' 
+                  : 'bg-white border-neutral-250 hover:bg-neutral-50 text-neutral-500 shadow-sm'
               }`}
             >
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
@@ -178,19 +178,19 @@ export default function CheckupDetail({ onBack, isDarkMode }) {
           <h3 className="text-[18px] font-bold tracking-tight">검진 전 필수 유의사항</h3>
           <ul className={`space-y-3.5 text-[13px] leading-relaxed ${isDarkMode ? 'text-white/70' : 'text-neutral-600'}`}>
             <li className="flex gap-3 items-start">
-              <span className="text-amber-500 font-extrabold select-none mt-0.5">✔</span>
+              <span className={`font-extrabold select-none mt-0.5 ${isDarkMode ? 'text-white' : 'text-neutral-900'}`}>✔</span>
               <span><strong>최소 8시간 이상 완전 금식:</strong> 검진 전날 밤 10시 이후에는 물, 껌, 담배를 포함하여 일체의 음식물 섭취를 삼가 주셔야 정확한 검사가 가능합니다.</span>
             </li>
             <li className="flex gap-3 items-start">
-              <span className="text-amber-500 font-extrabold select-none mt-0.5">✔</span>
+              <span className={`font-extrabold select-none mt-0.5 ${isDarkMode ? 'text-white' : 'text-neutral-900'}`}>✔</span>
               <span><strong>약물 복용 지침 준수:</strong> 혈전용해제, 아스피린 계열 약물은 출혈 위험이 있으므로 담당의와 상의 후 7일 전부터 복용을 중단해 주세요. 혈압약은 소량의 물과 함께 당일 새벽 5시에 복용하세요.</span>
             </li>
             <li className="flex gap-3 items-start">
-              <span className="text-amber-500 font-extrabold select-none mt-0.5">✔</span>
+              <span className={`font-extrabold select-none mt-0.5 ${isDarkMode ? 'text-white' : 'text-neutral-900'}`}>✔</span>
               <span><strong>간편한 복장 착용:</strong> 탈의 및 검사 진행이 용이하도록 와이어나 금속 장식이 없는 편안한 스포티 의류를 착용하고 방문해 주시기 바랍니다.</span>
             </li>
             <li className="flex gap-3 items-start">
-              <span className="text-amber-500 font-extrabold select-none mt-0.5">✔</span>
+              <span className={`font-extrabold select-none mt-0.5 ${isDarkMode ? 'text-white' : 'text-neutral-900'}`}>✔</span>
               <span><strong>안정 및 충분한 숙면:</strong> 검진 전날에는 과도한 운동이나 음주, 야근을 피하고 최소 7시간 이상의 충분한 안정을 취해야 혈액 검사 결과의 오차를 차단할 수 있습니다.</span>
             </li>
           </ul>
@@ -226,7 +226,7 @@ export default function CheckupDetail({ onBack, isDarkMode }) {
             <svg className="absolute inset-0 w-full h-full pointer-events-none" fill="none">
               <path 
                 d="M 50 140 Q 120 120 145 60 T 260 50" 
-                stroke="#6366f1" 
+                stroke={isDarkMode ? '#555' : '#888'} 
                 strokeWidth="4" 
                 strokeLinecap="round" 
                 strokeDasharray="4 8"
@@ -236,9 +236,9 @@ export default function CheckupDetail({ onBack, isDarkMode }) {
 
             {/* Start Pin */}
             <div className="absolute left-[45px] top-[125px] flex flex-col items-center">
-              <div className="w-5 h-5 rounded-full bg-blue-500/20 flex items-center justify-center">
-                <div className="w-2.5 h-2.5 rounded-full bg-blue-500 animate-ping absolute" />
-                <div className="w-2.5 h-2.5 rounded-full bg-blue-500 z-10" />
+              <div className="w-5 h-5 rounded-full bg-neutral-500/20 flex items-center justify-center">
+                <div className="w-2.5 h-2.5 rounded-full bg-neutral-500 animate-ping absolute" />
+                <div className="w-2.5 h-2.5 rounded-full bg-neutral-600 z-10" />
               </div>
               <span className={`text-[9px] font-bold mt-1 px-1 rounded ${
                 isDarkMode ? 'bg-black/80 text-white/70' : 'bg-white/95 text-neutral-600 shadow-sm'
@@ -247,12 +247,12 @@ export default function CheckupDetail({ onBack, isDarkMode }) {
 
             {/* Hospital Pin */}
             <div className="absolute left-[245px] top-[30px] flex flex-col items-center">
-              <div className="w-8 h-8 rounded-full bg-indigo-500/20 flex items-center justify-center">
-                <svg className="w-5 h-5 text-indigo-500 animate-bounce" fill="currentColor" viewBox="0 0 20 20">
+              <div className="w-8 h-8 rounded-full bg-neutral-500/20 flex items-center justify-center">
+                <svg className="w-5 h-5 text-neutral-700 dark:text-neutral-300 animate-bounce" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                 </svg>
               </div>
-              <span className="text-[10px] font-bold bg-indigo-600 text-white px-2 py-0.5 rounded shadow-md mt-0.5">서울아산병원</span>
+              <span className="text-[10px] font-bold bg-neutral-800 dark:bg-white text-white dark:text-black px-2 py-0.5 rounded shadow-md mt-0.5">서울아산병원</span>
             </div>
           </div>
         </div>
@@ -283,7 +283,7 @@ export default function CheckupDetail({ onBack, isDarkMode }) {
                     type="checkbox" 
                     checked={q1}
                     onChange={(e) => setQ1(e.target.checked)}
-                    className="w-4 h-4 mt-0.5 accent-indigo-500 rounded cursor-pointer"
+                    className="w-4 h-4 mt-0.5 accent-neutral-800 dark:accent-neutral-200 rounded cursor-pointer"
                   />
                   <span className="text-[13px] font-medium leading-snug">최근 3개월 이내 수술 또는 입증된 중증 질환 치료 이력이 있습니까?</span>
                 </label>
@@ -293,7 +293,7 @@ export default function CheckupDetail({ onBack, isDarkMode }) {
                     type="checkbox" 
                     checked={q2}
                     onChange={(e) => setQ2(e.target.checked)}
-                    className="w-4 h-4 mt-0.5 accent-indigo-500 rounded cursor-pointer"
+                    className="w-4 h-4 mt-0.5 accent-neutral-800 dark:accent-neutral-200 rounded cursor-pointer"
                   />
                   <span className="text-[13px] font-medium leading-snug">고혈압, 당뇨, 심장 질환 관련 약물을 매일 정기 복용 중이십니까?</span>
                 </label>
@@ -303,7 +303,7 @@ export default function CheckupDetail({ onBack, isDarkMode }) {
                     type="checkbox" 
                     checked={q3}
                     onChange={(e) => setQ3(e.target.checked)}
-                    className="w-4 h-4 mt-0.5 accent-indigo-500 rounded cursor-pointer"
+                    className="w-4 h-4 mt-0.5 accent-neutral-800 dark:accent-neutral-200 rounded cursor-pointer"
                   />
                   <span className="text-[13px] font-medium leading-snug">약물, 식품, 또는 조영제 관련 특이 체질이나 알레르기가 있습니까?</span>
                 </label>
@@ -352,7 +352,7 @@ export default function CheckupDetail({ onBack, isDarkMode }) {
                       onClick={() => setSelectedDate(d)}
                       className={`h-[36px] rounded-lg text-[12px] font-semibold transition-all ${
                         selectedDate === d 
-                          ? 'bg-indigo-600 text-white shadow-md' 
+                          ? (isDarkMode ? 'bg-white text-black shadow-md' : 'bg-black text-white shadow-md') 
                           : (isDarkMode ? 'bg-white/5 text-white/70 hover:bg-white/10' : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200')
                       }`}
                     >
@@ -372,7 +372,7 @@ export default function CheckupDetail({ onBack, isDarkMode }) {
                       onClick={() => setSelectedTime(t)}
                       className={`h-[36px] rounded-lg text-[12px] font-semibold transition-all ${
                         selectedTime === t 
-                          ? 'bg-indigo-600 text-white shadow-md' 
+                          ? (isDarkMode ? 'bg-white text-black shadow-md' : 'bg-black text-white shadow-md') 
                           : (isDarkMode ? 'bg-white/5 text-white/70 hover:bg-white/10' : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200')
                       }`}
                     >
@@ -411,7 +411,7 @@ export default function CheckupDetail({ onBack, isDarkMode }) {
           <div className={`w-full max-w-[320px] rounded-[28px] p-6 space-y-4 shadow-2xl border text-center transition-colors ${
             isDarkMode ? 'bg-[#121212] border-white/10 text-white' : 'bg-white border-neutral-200 text-neutral-900'
           }`}>
-            <div className="w-12 h-12 rounded-full bg-red-500/10 text-red-500 flex items-center justify-center mx-auto">
+            <div className="w-12 h-12 rounded-full bg-neutral-500/10 text-neutral-800 dark:text-neutral-200 flex items-center justify-center mx-auto">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-6 h-6 animate-pulse">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
               </svg>
@@ -435,7 +435,9 @@ export default function CheckupDetail({ onBack, isDarkMode }) {
               </button>
               <button 
                 onClick={handleCancelConfirm}
-                className="flex-1 h-[42px] rounded-full text-[13px] font-bold bg-red-600 hover:bg-red-700 text-white shadow-lg transition-colors"
+                className={`flex-1 h-[42px] rounded-full text-[13px] font-bold shadow-lg transition-colors ${
+                  isDarkMode ? 'bg-white text-black hover:bg-neutral-200' : 'bg-black text-white hover:bg-neutral-800'
+                }`}
               >
                 예약 취소
               </button>

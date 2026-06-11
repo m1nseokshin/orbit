@@ -12,7 +12,7 @@ export default function OrbiGateway({ onNavigate, isDarkMode }) {
       
       {/* Orbi Assistant Visual Header - Restored sphere from 125px to 178px per design integrity */}
       <div className="flex flex-col items-center pt-[45px] md:pt-[91px] pb-6 animate-fadeInUp">
-        <div className="w-[178px] h-[178px] relative rounded-full flex items-center justify-center overflow-hidden animate-pulse duration-1000 shadow-xl shadow-indigo-500/10">
+        <div className="w-[178px] h-[178px] relative rounded-full flex items-center justify-center overflow-hidden animate-pulse duration-1000 shadow-xl shadow-neutral-500/10">
           <img alt="Orbi Glowing Assistant" className="w-full h-full object-contain scale-110" src={imgImage3} />
           <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
         </div>
@@ -64,7 +64,7 @@ export default function OrbiGateway({ onNavigate, isDarkMode }) {
           </div>
           <div className={`h-[6px] overflow-hidden rounded-full w-full ${isDarkMode ? 'bg-white/5' : 'bg-neutral-100'}`}>
             <div className={`h-full rounded-full w-[72%] transition-all duration-[1200ms] ease-out ${
-              isDarkMode ? 'bg-white' : 'bg-blue-500'
+              isDarkMode ? 'bg-white' : 'bg-neutral-900'
             }`} />
           </div>
         </div>
@@ -77,7 +77,7 @@ export default function OrbiGateway({ onNavigate, isDarkMode }) {
           </div>
           <div className={`h-[6px] overflow-hidden rounded-full w-full ${isDarkMode ? 'bg-white/5' : 'bg-neutral-100'}`}>
             <div className={`h-full rounded-full w-[83%] transition-all duration-[1200ms] ease-out ${
-              isDarkMode ? 'bg-neutral-400' : 'bg-purple-500'
+              isDarkMode ? 'bg-neutral-400' : 'bg-neutral-600'
             }`} />
           </div>
         </div>
@@ -95,7 +95,7 @@ export default function OrbiGateway({ onNavigate, isDarkMode }) {
           </div>
           <div className={`h-[6px] overflow-hidden rounded-full w-full ${isDarkMode ? 'bg-white/5' : 'bg-neutral-100'}`}>
             <div className={`h-full rounded-full w-[60%] transition-all duration-[1200ms] ease-out ${
-              isDarkMode ? 'bg-neutral-600' : 'bg-red-500'
+              isDarkMode ? 'bg-neutral-600' : 'bg-neutral-450'
             }`} />
           </div>
         </div>

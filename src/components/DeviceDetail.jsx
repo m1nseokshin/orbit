@@ -186,13 +186,13 @@ export default function DeviceDetail({
           {deviceType === 'medication' && (
             /* Premium Medication Dispenser design */
             <div className="w-[80px] h-[140px] flex flex-col items-center justify-center relative">
-              <div className={`absolute w-[50px] h-[50px] rounded-full blur-md transition-all duration-700 ${isMedicationTaken ? 'bg-emerald-500/20' : 'bg-orange-500/10'}`} />
+              <div className={`absolute w-[50px] h-[50px] rounded-full blur-md transition-all duration-700 ${isMedicationTaken ? 'bg-neutral-500/20' : 'bg-neutral-500/5'}`} />
               <div className={`w-[64px] h-[90px] rounded-[18px] border flex flex-col items-center justify-between p-3 relative ${isDarkMode ? 'bg-white/5 border-white/10' : 'bg-neutral-100 border-neutral-300'}`}>
-                <div className={`w-8 h-8 rounded-full flex items-center justify-center ${isMedicationTaken ? 'bg-emerald-500/10 text-emerald-450' : 'bg-orange-500/10 text-orange-450'}`}>
+                <div className={`w-8 h-8 rounded-full flex items-center justify-center ${isMedicationTaken ? 'bg-neutral-200 text-neutral-850 dark:bg-white/20 dark:text-white' : 'bg-neutral-100 text-neutral-400 dark:bg-white/5 dark:text-neutral-500'}`}>
                   <img alt="Alarm Star" className={`w-4 h-4 object-contain ${isDarkMode ? '' : 'invert'}`} src={imgStarIcon} />
                 </div>
                 <div className="w-full flex justify-center gap-1">
-                  <span className={`w-2 h-2 rounded-full ${isMedicationTaken ? 'bg-emerald-500' : 'bg-neutral-500/40'}`} />
+                  <span className={`w-2 h-2 rounded-full ${isMedicationTaken ? 'bg-neutral-800 dark:bg-white' : 'bg-neutral-500/40'}`} />
                   <span className="w-2 h-2 rounded-full bg-neutral-500/40" />
                   <span className="w-2 h-2 rounded-full bg-neutral-500/40" />
                 </div>
@@ -331,9 +331,9 @@ export default function DeviceDetail({
         {deviceType === 'medication' && (
           <button 
             onClick={onToggleMedication}
-            className={`h-[32px] px-3.5 rounded-full font-bold text-[12px] transition-all ${
+            className={`h-[32px] px-3.5 rounded-full font-bold text-[12px] transition-all border ${
               isMedicationTaken 
-                ? 'bg-emerald-500 text-white shadow-md shadow-emerald-500/10' 
+                ? (isDarkMode ? 'bg-white/10 border-white/20 text-neutral-300' : 'bg-neutral-100 border-neutral-350 text-neutral-800') 
                 : (isDarkMode ? 'bg-white text-black hover:bg-neutral-200' : 'bg-black text-white hover:bg-neutral-800')
             }`}
           >
@@ -351,7 +351,7 @@ export default function DeviceDetail({
           <div className="flex flex-col gap-2">
             <div className="flex justify-between items-center">
               <span className="text-[14px] font-bold">설정 희망 온도</span>
-              <span className="text-[16px] font-extrabold text-blue-500">{dysonTemp}°C</span>
+              <span className={`text-[16px] font-extrabold ${isDarkMode ? 'text-white' : 'text-neutral-900'}`}>{dysonTemp}°C</span>
             </div>
             <input 
               type="range" 
@@ -360,7 +360,7 @@ export default function DeviceDetail({
               step="1"
               value={dysonTemp}
               onChange={(e) => onChangeDysonTemp(parseInt(e.target.value))}
-              className="w-full h-1.5 rounded-full bg-blue-500/15 cursor-pointer accent-blue-500"
+              className="w-full h-1.5 rounded-full bg-neutral-200 dark:bg-white/10 cursor-pointer accent-black dark:accent-white"
             />
           </div>
 
@@ -368,7 +368,7 @@ export default function DeviceDetail({
           <div className="flex flex-col gap-2 pt-3 border-t border-white/5">
             <div className="flex justify-between items-center">
               <span className="text-[13px] font-semibold">바람 세기 설정</span>
-              <span className="text-[15px] font-bold text-blue-500">{localFanSpeed} 단계</span>
+              <span className={`text-[15px] font-bold ${isDarkMode ? 'text-white' : 'text-neutral-900'}`}>{localFanSpeed} 단계</span>
             </div>
             <input 
               type="range" 
@@ -376,7 +376,7 @@ export default function DeviceDetail({
               max="10" 
               value={localFanSpeed}
               onChange={(e) => setLocalFanSpeed(parseInt(e.target.value))}
-              className="w-full h-1.5 rounded-full cursor-pointer accent-blue-500"
+              className="w-full h-1.5 rounded-full cursor-pointer accent-black dark:accent-white"
             />
           </div>
         </div>
@@ -390,7 +390,7 @@ export default function DeviceDetail({
           <div className="flex flex-col gap-2">
             <div className="flex justify-between items-center">
               <span className="text-[14px] font-bold">오디오 볼륨 조절</span>
-              <span className="text-[16px] font-extrabold text-orange-500">{nestVolume}%</span>
+              <span className={`text-[16px] font-extrabold ${isDarkMode ? 'text-white' : 'text-neutral-900'}`}>{nestVolume}%</span>
             </div>
             <input 
               type="range" 
@@ -399,7 +399,7 @@ export default function DeviceDetail({
               step="5"
               value={nestVolume}
               onChange={(e) => onChangeNestVolume(parseInt(e.target.value))}
-              className="w-full h-1.5 rounded-full bg-orange-500/15 cursor-pointer accent-orange-500"
+              className="w-full h-1.5 rounded-full bg-neutral-200 dark:bg-white/10 cursor-pointer accent-black dark:accent-white"
             />
           </div>
 
@@ -407,7 +407,7 @@ export default function DeviceDetail({
           <div className="flex flex-col gap-2 pt-3 border-t border-white/5">
             <div className="flex justify-between items-center">
               <span className="text-[13px] font-semibold">화면 밝기 설정</span>
-              <span className="text-[15px] font-bold text-orange-500">{localNestBrightness}%</span>
+              <span className={`text-[15px] font-bold ${isDarkMode ? 'text-white' : 'text-neutral-900'}`}>{localNestBrightness}%</span>
             </div>
             <input 
               type="range" 
@@ -415,7 +415,7 @@ export default function DeviceDetail({
               max="100" 
               value={localNestBrightness}
               onChange={(e) => setLocalNestBrightness(parseInt(e.target.value))}
-              className="w-full h-1.5 rounded-full cursor-pointer accent-orange-500"
+              className="w-full h-1.5 rounded-full cursor-pointer accent-black dark:accent-white"
             />
           </div>
 
@@ -429,7 +429,7 @@ export default function DeviceDetail({
                   onClick={() => setLocalNestMode(mode)}
                   className={`flex-1 h-[32px] rounded-lg text-[11px] font-bold border transition-colors ${
                     localNestMode === mode
-                      ? 'bg-orange-500 border-orange-500 text-white'
+                      ? (isDarkMode ? 'bg-white text-black border-white' : 'bg-black text-white border-black')
                       : (isDarkMode ? 'bg-white/5 border-white/10 text-white/60 hover:bg-white/10' : 'bg-neutral-100 border-neutral-300 text-neutral-800 hover:bg-neutral-200')
                   }`}
                 >
@@ -447,7 +447,7 @@ export default function DeviceDetail({
         }`}>
           <div className="flex justify-between items-center">
             <span className="text-[14px] font-bold">희망 습도 조절</span>
-            <span className="text-[16px] font-extrabold text-blue-500">{targetHumidity}%</span>
+            <span className={`text-[16px] font-extrabold ${isDarkMode ? 'text-white' : 'text-neutral-900'}`}>{targetHumidity}%</span>
           </div>
           <input 
             type="range" 
@@ -456,7 +456,7 @@ export default function DeviceDetail({
             step="5"
             value={targetHumidity}
             onChange={(e) => onChangeTargetHumidity(parseInt(e.target.value))}
-            className="w-full h-1.5 rounded-full bg-blue-500/15 cursor-pointer accent-blue-500"
+            className="w-full h-1.5 rounded-full bg-neutral-200 dark:bg-white/10 cursor-pointer accent-black dark:accent-white"
           />
         </div>
       )}
@@ -475,7 +475,7 @@ export default function DeviceDetail({
               onClick={onToggleLightMode}
               className={`h-[28px] px-3 rounded-full text-[11px] font-bold border transition-colors ${
                 isLightAuto 
-                  ? 'bg-yellow-500 border-yellow-500 text-white' 
+                  ? (isDarkMode ? 'bg-white border-white text-black' : 'bg-black border-black text-white') 
                   : (isDarkMode ? 'bg-white/5 border-white/10 text-white/60' : 'bg-neutral-100 border-neutral-300 text-neutral-800')
               }`}
             >
@@ -487,7 +487,7 @@ export default function DeviceDetail({
           <div className={`flex flex-col gap-2 ${isLightAuto ? 'opacity-50 pointer-events-none' : ''}`}>
             <div className="flex justify-between items-center">
               <span className="text-[13px] font-semibold">밝기 조절</span>
-              <span className="text-[15px] font-bold text-yellow-500">{localBrightness}%</span>
+              <span className={`text-[15px] font-bold ${isDarkMode ? 'text-white' : 'text-neutral-950'}`}>{localBrightness}%</span>
             </div>
             <input 
               type="range" 
@@ -495,7 +495,7 @@ export default function DeviceDetail({
               max="100" 
               value={localBrightness}
               onChange={(e) => setLocalBrightness(parseInt(e.target.value))}
-              className="w-full h-1.5 rounded-full cursor-pointer accent-yellow-500"
+              className="w-full h-1.5 rounded-full cursor-pointer accent-black dark:accent-white"
             />
           </div>
 
@@ -503,7 +503,7 @@ export default function DeviceDetail({
           <div className={`flex flex-col gap-2 ${isLightAuto ? 'opacity-50 pointer-events-none' : ''}`}>
             <div className="flex justify-between items-center">
               <span className="text-[13px] font-semibold">색온도 조절</span>
-              <span className="text-[15px] font-bold text-orange-450">{localTemp}K</span>
+              <span className={`text-[15px] font-bold ${isDarkMode ? 'text-white' : 'text-neutral-950'}`}>{localTemp}K</span>
             </div>
             <input 
               type="range" 
@@ -512,7 +512,7 @@ export default function DeviceDetail({
               step="100"
               value={localTemp}
               onChange={(e) => setLocalTemp(parseInt(e.target.value))}
-              className="w-full h-1.5 rounded-full cursor-pointer accent-orange-500"
+              className="w-full h-1.5 rounded-full cursor-pointer accent-black dark:accent-white"
             />
           </div>
         </div>
@@ -525,12 +525,12 @@ export default function DeviceDetail({
           isDarkMode ? 'bg-[#111111] border-white/5 text-white' : 'bg-white border-neutral-200 text-neutral-900 shadow-sm'
         }`}>
           <div className="flex items-center justify-between">
-            {deviceType === 'purifier' && <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${isPurifierOn ? 'bg-emerald-500/10 text-emerald-450' : 'bg-neutral-500/10 text-neutral-450'}`}>{isPurifierOn ? 'GOOD' : 'OFF'}</span>}
-            {deviceType === 'dyson' && <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${isDysonOn ? 'bg-blue-500/10 text-blue-450' : 'bg-neutral-500/10 text-neutral-450'}`}>{isDysonOn ? 'ACTIVE' : 'OFF'}</span>}
-            {deviceType === 'nest' && <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${isNestOn ? 'bg-orange-500/10 text-orange-450' : 'bg-neutral-500/10 text-neutral-450'}`}>{isNestOn ? 'ONLINE' : 'OFF'}</span>}
-            {deviceType === 'humidity' && <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${isHumidifierOn ? 'bg-blue-500/10 text-blue-450' : 'bg-neutral-500/10 text-neutral-450'}`}>{isHumidifierOn ? 'NORMAL' : 'OFF'}</span>}
-            {deviceType === 'light' && <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${isLightOn ? 'bg-yellow-500/10 text-yellow-450' : 'bg-neutral-500/10 text-neutral-450'}`}>{isLightOn ? 'ACTIVE' : 'OFF'}</span>}
-            {deviceType === 'medication' && <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${isMedicationTaken ? 'bg-emerald-500/10 text-emerald-450' : 'bg-orange-500/10 text-orange-450'}`}>{isMedicationTaken ? 'COMPLETE' : 'PENDING'}</span>}
+            {deviceType === 'purifier' && <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${isPurifierOn ? 'bg-neutral-900 text-white dark:bg-white/15 dark:text-white' : 'bg-neutral-500/10 text-neutral-450'}`}>{isPurifierOn ? 'GOOD' : 'OFF'}</span>}
+            {deviceType === 'dyson' && <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${isDysonOn ? 'bg-neutral-900 text-white dark:bg-white/15 dark:text-white' : 'bg-neutral-500/10 text-neutral-450'}`}>{isDysonOn ? 'ACTIVE' : 'OFF'}</span>}
+            {deviceType === 'nest' && <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${isNestOn ? 'bg-neutral-900 text-white dark:bg-white/15 dark:text-white' : 'bg-neutral-500/10 text-neutral-450'}`}>{isNestOn ? 'ONLINE' : 'OFF'}</span>}
+            {deviceType === 'humidity' && <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${isHumidifierOn ? 'bg-neutral-900 text-white dark:bg-white/15 dark:text-white' : 'bg-neutral-500/10 text-neutral-450'}`}>{isHumidifierOn ? 'NORMAL' : 'OFF'}</span>}
+            {deviceType === 'light' && <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${isLightOn ? 'bg-neutral-900 text-white dark:bg-white/15 dark:text-white' : 'bg-neutral-500/10 text-neutral-450'}`}>{isLightOn ? 'ACTIVE' : 'OFF'}</span>}
+            {deviceType === 'medication' && <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${isMedicationTaken ? 'bg-neutral-900 text-white dark:bg-white/15 dark:text-white' : 'bg-neutral-500/10 text-neutral-450'}`}>{isMedicationTaken ? 'COMPLETE' : 'PENDING'}</span>}
           </div>
           <div>
             <span className={`text-[12px] font-bold block tracking-wider ${isDarkMode ? 'text-white/40' : 'text-neutral-450'}`}>
@@ -562,12 +562,12 @@ export default function DeviceDetail({
           isDarkMode ? 'bg-[#111111] border-white/5 text-white' : 'bg-white border-neutral-200 text-neutral-900 shadow-sm'
         }`}>
           <div className="flex items-center justify-between">
-            {deviceType === 'purifier' && <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${isPurifierOn ? 'bg-emerald-500/10 text-emerald-450' : 'bg-neutral-500/10 text-neutral-450'}`}>{isPurifierOn ? 'GOOD' : 'OFF'}</span>}
-            {deviceType === 'dyson' && <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${isDysonOn ? 'bg-blue-500/10 text-blue-450' : 'bg-neutral-500/10 text-neutral-450'}`}>{isDysonOn ? 'OPTIMAL' : 'OFF'}</span>}
-            {deviceType === 'nest' && <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${isNestOn ? 'bg-orange-500/10 text-orange-450' : 'bg-neutral-500/10 text-neutral-450'}`}>{isNestOn ? 'LINKED' : 'OFF'}</span>}
-            {deviceType === 'humidity' && <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${isHumidifierOn ? 'bg-blue-500/10 text-blue-450' : 'bg-neutral-500/10 text-neutral-450'}`}>{isHumidifierOn ? 'STABLE' : 'OFF'}</span>}
-            {deviceType === 'light' && <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${isLightOn ? 'bg-yellow-500/10 text-yellow-450' : 'bg-neutral-500/10 text-neutral-450'}`}>{isLightOn ? 'OPTIMAL' : 'OFF'}</span>}
-            {deviceType === 'medication' && <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${isMedicationTaken ? 'bg-emerald-500/10 text-emerald-450' : 'bg-neutral-500/10 text-neutral-450'}`}>{isMedicationTaken ? 'EXCELLENT' : 'NORMAL'}</span>}
+            {deviceType === 'purifier' && <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${isPurifierOn ? 'bg-neutral-900 text-white dark:bg-white/15 dark:text-white' : 'bg-neutral-500/10 text-neutral-450'}`}>{isPurifierOn ? 'GOOD' : 'OFF'}</span>}
+            {deviceType === 'dyson' && <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${isDysonOn ? 'bg-neutral-900 text-white dark:bg-white/15 dark:text-white' : 'bg-neutral-500/10 text-neutral-450'}`}>{isDysonOn ? 'OPTIMAL' : 'OFF'}</span>}
+            {deviceType === 'nest' && <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${isNestOn ? 'bg-neutral-900 text-white dark:bg-white/15 dark:text-white' : 'bg-neutral-500/10 text-neutral-450'}`}>{isNestOn ? 'LINKED' : 'OFF'}</span>}
+            {deviceType === 'humidity' && <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${isHumidifierOn ? 'bg-neutral-900 text-white dark:bg-white/15 dark:text-white' : 'bg-neutral-500/10 text-neutral-450'}`}>{isHumidifierOn ? 'STABLE' : 'OFF'}</span>}
+            {deviceType === 'light' && <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${isLightOn ? 'bg-neutral-900 text-white dark:bg-white/15 dark:text-white' : 'bg-neutral-500/10 text-neutral-450'}`}>{isLightOn ? 'OPTIMAL' : 'OFF'}</span>}
+            {deviceType === 'medication' && <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${isMedicationTaken ? 'bg-neutral-900 text-white dark:bg-white/15 dark:text-white' : 'bg-neutral-500/10 text-neutral-450'}`}>{isMedicationTaken ? 'EXCELLENT' : 'NORMAL'}</span>}
           </div>
           <div>
             <span className={`text-[12px] font-bold block tracking-wider ${isDarkMode ? 'text-white/40' : 'text-neutral-450'}`}>
@@ -610,7 +610,7 @@ export default function DeviceDetail({
             (deviceType === 'humidity' && isHumidifierOn) ||
             (deviceType === 'light' && isLightOn) ||
             (deviceType === 'medication' && isMedicationTaken)) && (
-            <span className={`text-[14px] font-semibold text-emerald-500`}>Clean</span>
+            <span className={`text-[14px] font-semibold ${isDarkMode ? 'text-neutral-300' : 'text-neutral-600'}`}>Clean</span>
           )}
         </div>
         
