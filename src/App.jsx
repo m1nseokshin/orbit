@@ -25,7 +25,7 @@ export default function App() {
   const [isSplashTransitioning, setIsSplashTransitioning] = useState(false);
 
   // Global shared state
-  const [userName, setUserName] = useState('김서희');
+  const [userName, setUserName] = useState('강민호');
   const [isPurifierOn, setIsPurifierOn] = useState(true);
   const [isLightOn, setIsLightOn] = useState(false);
   const [isLightAuto, setIsLightAuto] = useState(true);
@@ -243,7 +243,7 @@ export default function App() {
     setScreen('splash');
     setActiveTab('home');
     // Reset defaults
-    setUserName('김서희');
+    setUserName('강민호');
     setIsPurifierOn(true);
     setIsLightOn(false);
     setIsLightAuto(true);
