@@ -405,10 +405,10 @@ export default function Home({
         >
           <div className="flex justify-between items-start">
             <div className="flex gap-2.5 items-center">
-              <div className={`w-8 h-8 rounded-full flex items-center justify-center ${
+              <div className={`w-7 h-7 rounded-full flex items-center justify-center ${
                 isDarkMode ? 'bg-white/10 text-white' : 'bg-neutral-100 text-neutral-800'
               }`}>
-                <svg className="w-4.5 h-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M20 9.75A7.75 7.75 0 0112 17.5a7.75 7.75 0 01-8-7.75c0-4.5 8-11.75 8-11.75s8 7.25 8 11.75z" />
                 </svg>
               </div>
@@ -450,10 +450,10 @@ export default function Home({
             isDarkMode ? 'bg-[#111111] border border-white/5' : 'bg-white border border-neutral-200/80 shadow-md'
           }`}>
             <div className="flex justify-between items-center">
-              <div className={`w-8 h-8 rounded-full flex items-center justify-center ${
+              <div className={`w-7 h-7 rounded-full flex items-center justify-center ${
                 isDarkMode ? 'bg-white/10 text-white' : 'bg-neutral-100 text-neutral-800'
               }`}>
-                <svg className="w-4.5 h-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
@@ -473,10 +473,10 @@ export default function Home({
             isDarkMode ? 'bg-[#111111] border border-white/5' : 'bg-white border border-neutral-200/80 shadow-md'
           }`}>
             <div className="flex justify-between items-center">
-              <div className={`w-8 h-8 rounded-full flex items-center justify-center ${
+              <div className={`w-7 h-7 rounded-full flex items-center justify-center ${
                 isDarkMode ? 'bg-white/10 text-white' : 'bg-neutral-100 text-neutral-850'
               }`}>
-                <svg className="w-4.5 h-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
                 </svg>
               </div>
@@ -499,10 +499,10 @@ export default function Home({
           }`}
         >
           <div className="flex gap-2.5 items-center">
-            <div className={`w-8 h-8 rounded-full flex items-center justify-center ${
+            <div className={`w-7 h-7 rounded-full flex items-center justify-center ${
               isDarkMode ? 'bg-white/10 text-white' : 'bg-neutral-100 text-neutral-800'
             }`}>
-              <svg className="w-4.5 h-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
               </svg>
             </div>
