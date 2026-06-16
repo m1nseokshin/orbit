@@ -1,9 +1,9 @@
 import React from 'react';
 
-const imgContainer = "https://www.figma.com/api/mcp/asset/e2e97ac8-ce20-4212-a4fe-def225396730";
-const imgContainer1 = "https://www.figma.com/api/mcp/asset/dad03881-8d9b-404a-8da5-eb0bb0e92a42";
-const imgContainer2 = "https://www.figma.com/api/mcp/asset/d840cabe-beee-4ecc-bc3d-eec2018c033b";
-const imgContainer3 = "https://www.figma.com/api/mcp/asset/2599e725-1e84-4500-848e-0f79985d822d";
+const imgContainer = import.meta.env.BASE_URL + "figma/f8f4f22b-7737-44e2-bcaf-f0f54b3b9204.svg";
+const imgContainer1 = import.meta.env.BASE_URL + "figma/4ce641ec-9811-40c1-a317-9e9b218588ae.svg";
+const imgContainer2 = import.meta.env.BASE_URL + "figma/a9077408-5488-4941-bfc0-fecd72fccb0e.svg";
+const imgContainer3 = import.meta.env.BASE_URL + "figma/f4349ab9-6ad2-4db9-a6f0-d1b91483dfb4.svg";
 
 export default function DeviceList({ onNavigate, isPurifierOn, onTogglePurifier, isLightOn, isLightAuto, onToggleLightMode, isPurifierPaired, isLightPaired, isDarkMode }) {
   return (

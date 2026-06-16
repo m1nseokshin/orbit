@@ -1,10 +1,10 @@
 import React, { useState, useRef } from 'react';
 import CountUp from './Shared/CountUp';
 
-const imgRectangle2 = "https://www.figma.com/api/mcp/asset/c7ad6397-b06f-4f73-a142-047001401369";
-const imgIcon = "https://www.figma.com/api/mcp/asset/9b926673-7baf-4bfe-ac82-da0863fa68ad";
-const imgSvg = "https://www.figma.com/api/mcp/asset/e805cab0-0f80-44ac-9fa7-0e9413ac53f9";
-const imgBoxiconsLightBulb = "https://www.figma.com/api/mcp/asset/99f90968-3dcf-40ee-8699-886a296a221a";
+const imgRectangle2 = import.meta.env.BASE_URL + "figma/5b9cc0c1-701e-4556-ad0b-2bcb1e2d5649.png";
+const imgIcon = import.meta.env.BASE_URL + "figma/bf97bbf3-084b-4161-b752-b97518236e7f.svg";
+const imgSvg = import.meta.env.BASE_URL + "figma/473c72c6-9cd8-4680-aa71-4b211184ca52.svg";
+const imgBoxiconsLightBulb = import.meta.env.BASE_URL + "figma/9a40b9da-f1c3-418c-b127-73033fa16d96.svg";
 
 export default function Home({ 
   onNavigate, 

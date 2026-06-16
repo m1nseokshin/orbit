@@ -12,11 +12,11 @@ import Settings from './components/Settings';
 import CheckupDetail from './components/CheckupDetail';
 
 // Bottom Navigation Icons
-const ICON_HOME = "https://www.figma.com/api/mcp/asset/38bd4e76-9dd5-4fac-b577-3ea494b3fd9b";
-const ICON_ORBI = "https://www.figma.com/api/mcp/asset/6c57b8a1-9396-43bf-9615-565746d77738";
-const ICON_DEVICE = "https://www.figma.com/api/mcp/asset/1e6ddca6-7096-4349-be45-d63b8e176b66";
-const ICON_INSIGHT = "https://www.figma.com/api/mcp/asset/3ec5e492-c1d5-4e83-9f10-a3ce841ce3db";
-const ICON_SETTINGS = "https://www.figma.com/api/mcp/asset/18fcfcd9-0cbd-4ff2-9d1d-46a21d3adcf5";
+const ICON_HOME = import.meta.env.BASE_URL + "figma/66f08905-2d94-4915-90fc-3bb9a2d42e2f.svg";
+const ICON_ORBI = import.meta.env.BASE_URL + "figma/0f7ec9f0-24d9-41e0-9b07-b3481c13d210.svg";
+const ICON_DEVICE = import.meta.env.BASE_URL + "figma/c2e780ff-c62b-43c1-a87d-7dfc388b02aa.svg";
+const ICON_INSIGHT = import.meta.env.BASE_URL + "figma/9b0b393c-26c0-413a-a69f-257855ffcc99.svg";
+const ICON_SETTINGS = import.meta.env.BASE_URL + "figma/d82cdb79-8a7a-4ac7-b621-4619dced6215.svg";
 
 export default function App() {
   const [screen, setScreen] = useState('splash'); // 'splash' | 'onboarding' | 'dashboard' | 'device-detail' | 'pairing' | 'chat'

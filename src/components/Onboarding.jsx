@@ -1,33 +1,33 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 // Step 1 assets (Figma Node 16:964)
-const imgGroup1707481713_s0 = "https://www.figma.com/api/mcp/asset/319fa6af-85b5-4154-8741-477af328a466";
-const imgEllipse711_s0 = "https://www.figma.com/api/mcp/asset/606829dc-8cdf-42a5-8b3b-7d2e7c498d21";
-const imgEllipse712_s0 = "https://www.figma.com/api/mcp/asset/bedaf8b4-afa3-47aa-bccd-1a8e54aa1be3";
-const imgEllipse713_s0 = "https://www.figma.com/api/mcp/asset/4ff07e6b-ca68-419e-a788-e2e4f307bb1f";
-const imgArrow2_s0 = "https://www.figma.com/api/mcp/asset/bf4ea9b8-f20b-4458-8dad-e346e201624e";
-const imgEllipse714_s0 = "https://www.figma.com/api/mcp/asset/ce7c073e-cb7d-4fab-8a27-bc7fc472bb96";
-const imgEllipse715_s0 = "https://www.figma.com/api/mcp/asset/7cbec364-b4e6-4b2d-9d95-b819ec0df914";
+const imgGroup1707481713_s0 = import.meta.env.BASE_URL + "figma/d2235a4f-7d7e-4fba-b78e-2cb7c76ecd7c.svg";
+const imgEllipse711_s0 = import.meta.env.BASE_URL + "figma/1a3f3721-4fad-4e23-bf8d-588ee325abd4.svg";
+const imgEllipse712_s0 = import.meta.env.BASE_URL + "figma/9966e5d2-3741-4feb-9c12-70da84b39bcd.svg";
+const imgEllipse713_s0 = import.meta.env.BASE_URL + "figma/25c61e45-5641-49a5-8538-baf82676421a.svg";
+const imgArrow2_s0 = import.meta.env.BASE_URL + "figma/be0c51a0-3a96-4c53-b549-1da4fd6f8935.svg";
+const imgEllipse714_s0 = import.meta.env.BASE_URL + "figma/f2340f66-bfe7-4ae9-b991-a863e473924c.svg";
+const imgEllipse715_s0 = import.meta.env.BASE_URL + "figma/7507c1f1-8d33-4cd3-ad79-7b40aa4a8af5.svg";
 
 // Step 2 assets (Figma Node 16:976)
-const imgGroup1707481713_s1 = "https://www.figma.com/api/mcp/asset/6f55aa54-1ab7-4b3a-9ebb-4e6fadebc912";
-const imgEllipse716_s1 = "https://www.figma.com/api/mcp/asset/db6d77a7-5709-4371-9d67-905b36865c06";
-const imgVector1_s1 = "https://www.figma.com/api/mcp/asset/ac654734-8255-47ee-a631-42867fdf7af9";
-const imgVector2_s1 = "https://www.figma.com/api/mcp/asset/5926c653-da16-405f-888e-3ec874c48482";
+const imgGroup1707481713_s1 = import.meta.env.BASE_URL + "figma/8f13a2ae-f6de-46c7-a01c-1f6e05340728.svg";
+const imgEllipse716_s1 = import.meta.env.BASE_URL + "figma/1f9b80d2-0565-42aa-906b-46e18b4cf57f.svg";
+const imgVector1_s1 = import.meta.env.BASE_URL + "figma/6bde7468-5452-4ed2-b062-b3b1dc3c31e0.svg";
+const imgVector2_s1 = import.meta.env.BASE_URL + "figma/a1dba0cd-65ab-4994-98f4-5774a68858a6.svg";
 
 // Step 3 assets (Figma Node 16:987)
-const imgGroup1707481713_s2 = "https://www.figma.com/api/mcp/asset/0569414d-a4be-4aa1-b6a5-e3d1930414c5";
-const imgVector3_s2 = "https://www.figma.com/api/mcp/asset/1fb11b17-e22a-46ef-911e-929fe8cb7e33";
-const imgVector2_s2 = "https://www.figma.com/api/mcp/asset/6223e570-3ab0-46a9-a002-593fbb60c21f";
-const imgEllipse719_s2 = "https://www.figma.com/api/mcp/asset/81da14ef-c9cc-46af-95c2-631c19092008";
-const imgEllipse720_s2 = "https://www.figma.com/api/mcp/asset/71a5918f-fd03-4256-8a7c-e4d8862b2df5";
-const imgEllipse721_s2 = "https://www.figma.com/api/mcp/asset/5ecb0129-60de-4706-aeae-14d8d9acc100";
-const imgEllipse722_s2 = "https://www.figma.com/api/mcp/asset/9290f10c-a760-45de-9ee9-cfbc30ff17c8";
+const imgGroup1707481713_s2 = import.meta.env.BASE_URL + "figma/815722cd-f318-4dfa-a381-8b042fd05c38.svg";
+const imgVector3_s2 = import.meta.env.BASE_URL + "figma/f89f3e75-e845-42b0-b532-537e6df73000.svg";
+const imgVector2_s2 = import.meta.env.BASE_URL + "figma/39e74726-0ff7-4063-8ed3-dea3f421fac2.svg";
+const imgEllipse719_s2 = import.meta.env.BASE_URL + "figma/c114decd-d383-48b3-aa02-d25d2e6f0b14.svg";
+const imgEllipse720_s2 = import.meta.env.BASE_URL + "figma/5975749b-0622-4618-955b-0c5093c0540c.svg";
+const imgEllipse721_s2 = import.meta.env.BASE_URL + "figma/ad49b2cd-db89-4971-b64f-40b18f0bde96.svg";
+const imgEllipse722_s2 = import.meta.env.BASE_URL + "figma/0df763fb-4f68-41a6-a59a-9cc54685622f.svg";
 
 // Step 4 assets (Figma Node 17:2)
-const imgEllipse723_s3 = "https://www.figma.com/api/mcp/asset/9ee0b1c0-70ae-40bd-8ce9-b062eaf19285";
-const imgEllipse724_s3 = "https://www.figma.com/api/mcp/asset/d468196f-c19e-44ae-80e3-a749c572ab3f";
-const imgEllipse719_s3 = "https://www.figma.com/api/mcp/asset/60287f0a-a28f-438d-bc7f-4f4594464483";
+const imgEllipse723_s3 = import.meta.env.BASE_URL + "figma/d5e09eb4-1001-4559-89bb-d748c2303eaf.svg";
+const imgEllipse724_s3 = import.meta.env.BASE_URL + "figma/6244bf04-998b-4a1f-9f49-1cfd07176741.svg";
+const imgEllipse719_s3 = import.meta.env.BASE_URL + "figma/68a5dd83-e2fd-45d1-859a-d5492f95c257.svg";
 
 export default function Onboarding({ onComplete, forceStep }) {
   const [step, setStep] = useState(forceStep !== undefined ? forceStep : 0);

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { BackIcon } from './Shared/Icons';
 
-const imgSamsungAirInfiniteLine = "https://www.figma.com/api/mcp/asset/d5bff180-f1df-407c-8dce-3acc40897156";
-const imgContainer = "https://www.figma.com/api/mcp/asset/7c63853c-aa88-4efa-acc4-85245ec82219"; // Power icon
-const imgIcon = "https://www.figma.com/api/mcp/asset/20d4890b-bd3f-4122-904e-ea2ebc9e91bf"; // PM icon
-const imgStarIcon = "https://www.figma.com/api/mcp/asset/9b926673-7baf-4bfe-ac82-da0863fa68ad"; // Star icon
+const imgSamsungAirInfiniteLine = import.meta.env.BASE_URL + "figma/8075a196-1b7e-4046-b13c-f8e722c91eaf.png";
+const imgContainer = import.meta.env.BASE_URL + "figma/438a8051-2e70-4ed9-8260-a4078c0d2846.svg"; // Power icon
+const imgIcon = import.meta.env.BASE_URL + "figma/da95ecad-f1bd-4988-9869-f76c4f214f8e.svg"; // PM icon
+const imgStarIcon = import.meta.env.BASE_URL + "figma/bf97bbf3-084b-4161-b752-b97518236e7f.svg"; // Star icon
 
 export default function DeviceDetail({ 
   deviceType = 'purifier', 

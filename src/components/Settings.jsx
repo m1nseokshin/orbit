@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 
-const imgStarIcon = "https://www.figma.com/api/mcp/asset/9b926673-7baf-4bfe-ac82-da0863fa68ad";
-const imgContainer = "https://www.figma.com/api/mcp/asset/36d6fe87-bf67-43fe-a481-b7d4f040567b";
-const imgContainer1 = "https://www.figma.com/api/mcp/asset/99dadad4-f35e-4e81-b8e3-509ac1622b2e";
-const imgContainer2 = "https://www.figma.com/api/mcp/asset/f12385b3-a100-4dea-93ca-ab53160574f1";
-const imgContainer3 = "https://www.figma.com/api/mcp/asset/03828839-0069-4419-a0dd-e909ab6b80b2";
-const imgContainer4 = "https://www.figma.com/api/mcp/asset/4419cbd6-6d42-4808-a942-c2cb4edec673";
-const imgContainer5 = "https://www.figma.com/api/mcp/asset/8cc2043c-169e-4885-b4fc-add227367dbe";
-const imgContainer6 = "https://www.figma.com/api/mcp/asset/049b144a-cc13-48b0-af08-2034547a8719";
-const imgContainer7 = "https://www.figma.com/api/mcp/asset/b7ac4d35-804d-4e35-8994-bc572f36f29f";
-const imgContainer8 = "https://www.figma.com/api/mcp/asset/f5816fc2-aee1-4bff-9c57-81807b7babb9";
+const imgStarIcon = import.meta.env.BASE_URL + "figma/bf97bbf3-084b-4161-b752-b97518236e7f.svg";
+const imgContainer = import.meta.env.BASE_URL + "figma/1da1fca4-d275-41b6-92bd-a07e95e2d681.svg";
+const imgContainer1 = import.meta.env.BASE_URL + "figma/150b1356-d391-4704-953a-928262f7c938.svg";
+const imgContainer2 = import.meta.env.BASE_URL + "figma/4d3a7ea4-9253-4605-91af-6c64773feb8a.svg";
+const imgContainer3 = import.meta.env.BASE_URL + "figma/0b4766b0-c491-43e2-97ea-cbfa552dbade.svg";
+const imgContainer4 = import.meta.env.BASE_URL + "figma/9075c068-c82a-4082-ae82-bcf0d2a228bb.svg";
+const imgContainer5 = import.meta.env.BASE_URL + "figma/1e9d3df6-448a-44f7-9eee-58d1c645c3da.svg";
+const imgContainer6 = import.meta.env.BASE_URL + "figma/795cfb10-dfe3-44ef-a96c-94fee6f301a3.svg";
+const imgContainer7 = import.meta.env.BASE_URL + "figma/e9806ba3-2bf7-456c-9495-6266cb038c7f.svg";
+const imgContainer8 = import.meta.env.BASE_URL + "figma/37769b95-cccc-42eb-92f2-421505f0e026.svg";
 
 export default function Settings({ onNavigate, userName, onChangeUserName, onLogout, isDarkMode, onToggleTheme, forceEditName, onClearForceEdit }) {
   const [showEditName, setShowEditName] = useState(false);

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import CountUp from './Shared/CountUp';
 
-const ICON_MENU = "https://www.figma.com/api/mcp/asset/cb6a72d9-1546-42f3-8c82-26eda1f9c6b1";
-const ICON_ORBI_REC = "https://www.figma.com/api/mcp/asset/a83c0d99-e52d-4bd6-85d5-62793b84592a";
+const ICON_MENU = import.meta.env.BASE_URL + "figma/49e2f930-f953-4f50-b788-c6beabfb57c4.svg";
+const ICON_ORBI_REC = import.meta.env.BASE_URL + "figma/ca362578-79a4-49f9-b293-493a7d36aa5f.svg";
 
 export default function InsightDashboard({ onStartMeditation, isDarkMode }) {
   const [activeTab, setActiveTab] = useState('sleep');

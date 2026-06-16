@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { BackIcon } from './Shared/Icons';
 
-const imgContainer = "https://www.figma.com/api/mcp/asset/55b8ecb3-5db2-4376-94f1-663c62c84f9c";
-const imgContainer1 = "https://www.figma.com/api/mcp/asset/3d317d1b-dd24-47e7-9928-208c560155a1";
-const imgContainer2 = "https://www.figma.com/api/mcp/asset/107d8b3c-ef44-4f39-9360-4f4ada09815b";
-const imgContainer3 = "https://www.figma.com/api/mcp/asset/2160234c-fd3e-4edd-91a9-afebbf7ed6ff";
+const imgContainer = import.meta.env.BASE_URL + "figma/e766fc24-886e-457b-8225-fb20db010d4b.svg";
+const imgContainer1 = import.meta.env.BASE_URL + "figma/0fcced6d-e303-4e04-808b-c83dd5ec0d98.svg";
+const imgContainer2 = import.meta.env.BASE_URL + "figma/ca330640-08c9-499e-b63d-42d546117f17.svg";
+const imgContainer3 = import.meta.env.BASE_URL + "figma/fd9bb54c-8cb8-4e0c-a30c-e7b0aa980f72.svg";
 
 export default function DevicePairing({ onBack, onPairPurifier, onPairLight, isPurifierPaired, isLightPaired, isDarkMode }) {
   const [purifierStatus, setPurifierStatus] = useState(isPurifierPaired ? 'paired' : 'idle'); // 'idle' | 'pairing' | 'paired'

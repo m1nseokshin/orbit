@@ -1,8 +1,8 @@
 import React from 'react';
 import CountUp from './Shared/CountUp';
 
-const imgImage3 = "https://www.figma.com/api/mcp/asset/ff52802d-0ed1-4906-9ddb-a33a31496f94";
-const imgContainer = "https://www.figma.com/api/mcp/asset/a6bae92b-a159-4c16-bbf0-58a596cf4a89";
+const imgImage3 = import.meta.env.BASE_URL + "figma/08a055df-8e49-4c1e-add3-41958cc2b94d.png";
+const imgContainer = import.meta.env.BASE_URL + "figma/5df5637f-d342-4c53-90f5-be3d63d7c917.svg";
 
 export default function OrbiGateway({ onNavigate, isDarkMode }) {
   return (

@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 
-const imgGroup1707481716 = "https://www.figma.com/api/mcp/asset/aa97a7a5-7034-47f1-a06b-2761049fede2";
-const imgFrame1707481717 = "https://www.figma.com/api/mcp/asset/84cd8e84-def5-400e-aad5-eeb84122cfd1";
-const imgFrame1707481722 = "https://www.figma.com/api/mcp/asset/b1d305a2-feb2-4c87-bd7a-c422770cec53";
+const imgGroup1707481716 = import.meta.env.BASE_URL + "figma/a8636f37-1252-4184-aff9-5cccfa12e287.svg";
+const imgFrame1707481717 = import.meta.env.BASE_URL + "figma/0086d5f3-9e88-4585-85e5-e6b8dce00f87.svg";
+const imgFrame1707481722 = import.meta.env.BASE_URL + "figma/2e843176-bd05-476f-805b-45da5d041bf8.svg";
 
 const MOCK_CONVERSATIONS = [
   {

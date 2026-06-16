@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-const imgImage3 = "https://www.figma.com/api/mcp/asset/f78c633b-a330-4e64-999e-9500e8ead95e";
+const imgImage3 = import.meta.env.BASE_URL + "figma/81508835-4055-4c4c-94bc-a06526e76081.png";
 
 export default function Splash({ onComplete }) {
   useEffect(() => {
